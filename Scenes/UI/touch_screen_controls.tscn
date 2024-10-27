@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Images/Touchscreen Control Images/left.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Images/Touchscreen Control Images/left_pressed.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Images/Touchscreen Control Images/right.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Images/Touchscreen Control Images/right_pressed.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Images/Touchscreen Control Images/menu.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Images/Touchscreen Control Images/menu_pressed.png" type="Texture" id=6]
+
+[node name="TouchScreenControls" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dir1" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Left" type="TouchScreenButton" parent="Dir1"]
+position = Vector2( 15.5, -96 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "move_left"
+
+[node name="Right" type="TouchScreenButton" parent="Dir1"]
+position = Vector2( 103.5, -96 )
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+action = "move_right"
+
+[node name="Dir2" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Forward" type="TouchScreenButton" parent="Dir2"]
+position = Vector2( -96, -16 )
+rotation = -1.5708
+normal = ExtResource( 3 )
+pressed = ExtResource( 4 )
+action = "move_forward"
+
+[node name="Back" type="TouchScreenButton" parent="Dir2"]
+position = Vector2( -184, -16 )
+rotation = -1.5708
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "move_back"
+
+[node name="Dir3" type="Control" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Jump" type="TouchScreenButton" parent="Dir3"]
+position = Vector2( -28, -64 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
+action = "jump"

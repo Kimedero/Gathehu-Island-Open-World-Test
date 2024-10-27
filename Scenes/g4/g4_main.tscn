@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scripts/main.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Levels/TestLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://addons/monitor_overlay/monitor_overlay.gd" type="Script" id=4]
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 1 )
+
+[node name="Level" type="Spatial" parent="."]
+
+[node name="TestLevel" parent="Level" instance=ExtResource( 2 )]
+
+[node name="CharactersSpawnPoints" type="Spatial" parent="."]
+
+[node name="PlayerSpawnPoint" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0 )
+
+[node name="EnemySpawnPoint" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1, -32 )
+
+[node name="EnemySpawnPoint2" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, -34, 1, -25 )
+
+[node name="EnemySpawnPoint3" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 34, 1, -25 )
+
+[node name="EnemySpawnPoint4" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 145, 1, -38 )
+
+[node name="EnemySpawnPoint5" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( -0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 186, 1, -1 )
+
+[node name="EnemySpawnPoint6" type="Spatial" parent="CharactersSpawnPoints"]
+transform = Transform( -0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 151, 1, 24 )
+
+[node name="MonitorOverlay" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+grow_horizontal = 0
+rect_min_size = Vector2( 300, 0 )
+script = ExtResource( 4 )
+process = true
+physics_process = true
+total_draw_calls = true
+active_objects_3d = true
+graph_height = 30
